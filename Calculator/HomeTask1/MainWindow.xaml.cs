@@ -47,9 +47,15 @@ namespace Calculator
         {
             int x = Convert.ToInt32(Value1TextBox.Text);
             int y = Convert.ToInt32(Value2TextBox.Text);
-            int div = x / y;
-
-            ResultTextBlock.Text = div.ToString();
+            if(y == 0){
+                //MessageBox.Show("На нуль ділити не можна");
+                ResultTextBlock.Text = "На нуль ділити не можна";
+            }
+            else
+            {
+                int div = x / y;
+                ResultTextBlock.Text = div.ToString();
+            }
         }
 
         private void MulButton_Click(object sender, RoutedEventArgs e)
